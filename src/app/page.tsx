@@ -3,15 +3,6 @@ import { Inter } from "next/font/google";
 const inter=Inter({weight:"400",subsets:["latin"],display:"swap"})
 
 export default function Home() {
-
-  // <Image
-  //             src="/vercel.svg"
-  //             alt="Vercel Logo"
-  //             className="dark:invert"
-  //             width={10
-  //             height={24}
-  //             priority
-  //           />
   return (
     <>
       <section className="section">
