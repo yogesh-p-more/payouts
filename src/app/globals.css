@@ -1,0 +1,132 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+*{margin: 0;padding: 0;box-sizing: border-box;}
+html{font-size: 62.5%;}
+body{font-family: "GalanoGrotesqueAlt" !important;}
+img{display: block;max-width: 100%;}
+input{border: none;background: none;width: 100%;}
+select{-webkit-appearance: none;
+    -moz-appearance: none;}
+input:focus, select:focus{outline: none;}
+
+
+/* font family  */
+@font-face {
+    font-family: "GalanoGrotesqueAlt";
+    src: url('/fonts/GalanoGrotesqueAlt-Regular.ttf');
+}
+
+/* font sizes  */
+.small{font-size: 1.2rem;line-height: 1;}
+.small1{font-size: 1.3rem;line-height: 1;}
+.small01{font-size: 1.4rem;line-height: 1;}
+.small2{font-size: 1.5rem;line-height: 1.1;}
+.heading{font-size: 2rem;font-weight: 500;color: #1A181E;}
+.heading01{font-size: 1.6rem;font-weight: 400;color: #4D4D4D;}
+.heading02{font-size: 3.2rem;font-weight: 500;}
+
+.left{text-align: left;}
+.right{text-align: right;}
+.center{text-align: center;}
+
+.main-box{display: flex;}
+.sidebar{width: 22.4rem;background-color: #1E2640;padding: 1.6rem .8rem;}
+.set-width{width: 20.8rem;margin: 0 auto;padding: 0 .8rem;height: 100%;position: relative;}
+
+.user{width: 19.2rem;display: flex;justify-content: space-around;align-items: center;}
+.user-logo{margin-right: .5rem;}
+.user-name .name{color: #ffffff;font-weight: 500;}
+.visit-store{margin-top: .4rem;}
+.visit-store .small1{color: #ffffff;opacity: 80%;font-weight: 400;}
+
+.navlist{width: 19.2rem;margin-top: 2.4rem;font-family: 'Inter', sans-serif;}
+.navlist .list-ltem{display: flex;align-items: center;padding: 1.7rem .8rem;margin-left: 1.6rem;margin-bottom: .4rem;}
+.navlist .list-ltem:last-child{margin-bottom: 0;}
+.navlist .list-ltem .listname{margin-left: 1.2rem;font-weight: 500;color: #ffffff;opacity: 80%;}
+
+.dash-header{width: 100%;}
+.cus-header{background-color: #ffffff;padding: 1.2rem 3.2rem;border-bottom: 1px solid #D9D9D9;display: grid;grid-template-columns: 1fr 1fr 1fr;align-items: center;}
+.cus-header01{display: flex;}
+.cus-header01 .help{display: flex;align-items: center;margin-left: 1.6rem;}
+.cus-header01 .help .small{color: #4D4D4D;margin-left: .6rem;line-height: 0;}
+
+.cus-header02{background-color: #F2F2F2;height: 40px;padding: 1.2rem 1.6rem;border-radius: .6rem;}
+.cus-header02 .search-filter{display: flex;align-items: center;}
+.cus-header02 .search-filter input{font-size: 1.5rem;color: #808080;margin-left: .8rem;}
+
+.cus-header03 .header-btn{display: flex;align-items: center;justify-content: flex-end;}
+.cus-header03 .header-btn .header-btn1{width: 40px;height: 40px;border-radius: 100%;background-color: #E6E6E6;display: flex;align-items: center;justify-content: center;margin-right: 1.2rem;}
+.cus-header03 .header-btn .header-btn1:last-child{margin-right: 0;}
+
+.setalldata{padding: 3.2rem;background-color: #F2F2F2;}
+.box1{display: flex;align-items: center;justify-content: space-between;}
+.selectbox{position: relative;}
+.selecticon{position: absolute;top: 50%;transform: translateY(-50%);right: 1rem;}
+.selectbox select{font-size: 1.6rem;font-weight: 400;color: #4D4D4D;text-transform: capitalize;padding: .6rem 1.4rem;border: 1px solid #D9D9D9;border-radius: .4rem;padding-right: 3rem;}
+
+
+.box2{display: grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 2rem;margin-top: 2.4rem;}
+.box2 .minibox{background-color: #ffffff;border-radius: 8px;padding: 2rem;}
+.box2 .minibox .head-box{display: flex;justify-content: space-between;align-items: center;}
+.box2 .minibox .headingbox{display: flex;}
+.box2 .minibox .headingbox .heading01{margin-right: .8rem;}
+
+.box2 .minibox .orderbox{display: flex;justify-content: space-between;margin-top: 1.6rem;align-items: center;}
+.box2 .minibox .orderbox .orders a{font-size: 1.6rem;color: #146EB4;display: flex;align-items: center;}
+
+.box3{margin-top: 3.2rem;}
+.box3 .buttons{margin-top: 2.4rem;display: flex;align-items: center;}
+.box3 .buttons .btn{background-color: #E6E6E6;display: inline-block;color: #808080;font-size: 1.4rem;font-weight: 500;padding: .6rem 1.6rem;border-radius: 4rem;margin-right: 1.2rem;}
+.box3 .buttons .btn.active{background-color: #146EB4;color: #FFFFFF;}
+.box3 .buttons .btn:last-child{margin-right: 0;}
+
+.box4{margin-top: 2.4rem;padding: 1.2rem 1.2rem .8rem 1.2rem;background-color: #FFFFFF;border-radius: .8rem;}
+.tabel-btns{display: flex;align-items: center;justify-content: space-between;}
+.tabel-btns .searchhistory{display: flex;align-items: center;padding: 1rem 1.6rem;border: 1px solid #D9D9D9;border-radius: .4rem;}
+.tabel-btns .searchhistory .search-icon{margin-right: .8rem;}
+.sort{display: flex;align-items: center;padding: .6rem 1.2rem;border: 1px solid #D9D9D9;border-radius: .4rem;}
+.sort span{margin-right: .6rem;}
+.download{padding:.8rem;border: 1px solid #D9D9D9;border-radius: .4rem;display: inline-block;margin-left: 1.6rem;}
+.flex{display: flex;}
+
+.table{width: 100%;margin-top: 1.2rem;}
+.table-head{background-color: #F2F2F2;}
+.table-head th{width: 16.66%;padding: 1rem 1.2rem;font-size: 1.4rem;font-weight: 500;}
+.table-body td{width: 16.66%;padding: 1.4rem 1.2rem;font-size: 1.4rem;font-weight: 500;}
+.table-body td:first-child{color: #146EB4;}
+
+.circle{width: 10px;height: 10px;border-radius: 100%;background-color: #999999;display: inline-block;vertical-align: middle;}
+.circle.active{background-color: #17B31B;}
+
+.credits{display: flex;align-items: center;background-color: #353C53;border-radius: .4rem;padding: .9rem 1.2rem;position: absolute;left: 50%;transform: translateX(-50%);bottom: 1.6rem;width: max-content;}
+.credits .icon{background: rgba(255, 255, 255, 0.1);padding: .6rem;border-radius: .4rem;}
+.content{margin-left: 1.2rem;}
+.credits .small1{color: #FFFFFF;opacity: 80%;font-weight: 400;}
+.balance{color: #ffffff;font-size: 1.6rem;font-weight: 500;}
