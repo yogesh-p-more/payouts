@@ -1,8 +1,24 @@
+"use client"
 import Image from 'next/image'
 import { Inter } from "next/font/google";
-const inter=Inter({weight:"400",subsets:["latin"],display:"swap"})
+import { GiHamburgerMenu } from "react-icons/gi";
+import { TiArrowLeftThick } from "react-icons/ti";
+const inter = Inter({ weight: "400", subsets: ["latin"], display: "swap" })
 
 export default function Home() {
+  const handleMenuClick = () => {
+    const menu = document.querySelector('.sidebar');
+
+    // Toggle the 'active' class
+    menu.classList.toggle('active');
+  };
+
+  const handleMenuClick1 = () => {
+    const menu = document.querySelector('.sidebar');
+
+    // Toggle the 'active' class
+    menu.classList.toggle('active');
+  };
   return (
     <>
       <section className="section">
@@ -126,9 +142,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <div className="close-icon" onClick={handleMenuClick1}>
+                  <TiArrowLeftThick />
+              </div>
             </div>
             <div className="right-box dash-header">
               <div className="cus-header">
+                <div className="cus-headermenu" onClick={handleMenuClick}>
+                  <GiHamburgerMenu />
+                </div>
                 <div className="cus-header01">
                   <div className="headlogo">
                     <Image src="/img/logo.png" width={81} height={28} alt="" />
@@ -146,7 +168,6 @@ export default function Home() {
                     <input type="search" placeholder="Search features, tutorials, etc." />
                   </div>
                 </div>
-
                 <div className="cus-header03">
                   <div className="header-btn">
                     <div className="header-btn1">
@@ -261,7 +282,7 @@ export default function Home() {
                     <h2 className="heading">Transactions | Last Month</h2>
                   </div>
 
-                  <div className={"buttons " +  inter.className}>
+                  <div className={"buttons " + inter.className}>
                     <div className="btn active">Payouts (22)</div>
                     <div className="btn">Refunds (2)</div>
                   </div>
@@ -287,76 +308,78 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <table className="table" cellPadding="0" cellSpacing="0">
-                    <thead className="table-head">
-                      <tr>
-                        <th className="left">Date <Image src="/img/filldrop.png" width={8} height={8} alt="" style={{ display: 'inline-block' }} /></th>
-                        <th className="left">Status</th>
-                        <th className="left">Transaction ID</th>
-                        <th className="right">Order amount</th>
-                        <th className="right">Transaction fees</th>
-                        <th className="right">Total</th>
-                      </tr>
-                    </thead>
-                    <tbody className="table-body">
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                      <tr>
-                        <td className="left">Today, 09:00 PM</td>
-                        <td className="left"><span className="circle active"></span> Processing</td>
-                        <td className="left">131634495747</td>
-                        <td className="right">₹10,125.00</td>
-                        <td className="right">₹1,125.00</td>
-                        <td className="right">₹9,312</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div className='settabel'>
+                    <table className="table" width={100} cellPadding="0" cellSpacing="0">
+                      <thead className="table-head">
+                        <tr>
+                          <th className="left">Date <Image src="/img/filldrop.png" width={8} height={8} alt="" style={{ display: 'inline-block' }} /></th>
+                          <th className="left">Status</th>
+                          <th className="left">Transaction ID</th>
+                          <th className="right">Order amount</th>
+                          <th className="right">Transaction fees</th>
+                          <th className="right">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody className="table-body">
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                        <tr>
+                          <td className="left">Today, 09:00 PM</td>
+                          <td className="left"><span className="circle active"></span> Processing</td>
+                          <td className="left">131634495747</td>
+                          <td className="right">₹10,125.00</td>
+                          <td className="right">₹1,125.00</td>
+                          <td className="right">₹9,312</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
 
 
